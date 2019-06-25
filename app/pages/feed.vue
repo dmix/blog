@@ -10,11 +10,11 @@ import {
     Component,
     Vue,
 } from 'vue-property-decorator'
-import Post from '~/models/Post'
+import Post from '../models/Post'
 
 @Component({
     components: {
-        PostPreview: () => import('~/components/PostPreview.vue'),
+        PostPreview: () => import('../components/PostPreview.vue'),
     },
 
     async asyncData() {

@@ -1,4 +1,6 @@
-require('browser-env')()
+import 'ava'
+import 'browser-env'
+
 const hooks = require('require-extension-hooks')
 const Vue = require('vue')
 

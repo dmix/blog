@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator'
-import Post from '~/models/Post'
+import Post from '../models/Post'
 
 @Component
 export default class PostPreview extends Vue {
