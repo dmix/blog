@@ -1,11 +1,11 @@
 <template>
     <div>
-        <PostPreview v-for="post in posts" :key="post.id" :post="post" />
+        <PostPreview v-for='post in posts' :key='post.id' :post='post' />
     </div>
 </template>
 
-<script lang="ts">
-import axios from 'axios'
+<script lang='ts'>
+// import axios from 'axios'
 import {
     Component,
     Vue,
@@ -17,10 +17,17 @@ import Post from '../models/Post'
         PostPreview: () => import('../components/PostPreview.vue'),
     },
 
-    async asyncData() {
-        const { data } = await axios.get(`https://my-api/posts`)
+    asyncData() {
+        // const { data } = await axios.get(`https://my-api/posts`)
         return {
-            posts: data,
+            // posts: data,
+            posts: [
+                {
+                    id: 1,
+                    title: 'This is my title!',
+                    description: 'Helllo this is my long description to fill space',
+                }
+            ],
         }
     },
 })
