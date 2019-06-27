@@ -2,38 +2,49 @@
     <div class="container">
         <div>
             <logo />
-            <h1 class="title">
-                blog
-            </h1>
-            <h2 class="subtitle">
-                A Vue SSR front-end for a Phoenix powered blog&#39;
-            </h2>
-            <div class="links">
-                <a
-                    href="https://nuxtjs.org/"
-                    target="_blank"
-                    class="button--green"
-                >
-                    Documentation
-                </a>
-                <a
-                    href="https://github.com/nuxt/nuxt.js"
-                    target="_blank"
-                    class="button--grey"
-                >
-                    GitHub
-                </a>
-            </div>
+
+            <h1>Blog</h1>
+
+            <PostPreview
+                v-for="post in posts"
+                :key="post.id"
+                :post="post" />
+            <hr>
         </div>
     </div>
 </template>
 
 <script>
 import Logo from '../components/Logo.vue'
+import PostPreview from '../components/PostPreview.vue'
 
 export default {
     components: {
         Logo,
+        PostPreview,
+    },
+
+    asyncData() {
+        // const { data } = await axios.get(`https://my-api/posts`)
+        return {
+            posts: [
+                {
+                    id: 1,
+                    title: 'This is my title!',
+                    description: 'Helllo this is my long description to fill space',
+                },
+                {
+                    id: 2,
+                    title: 'This is my title! 2',
+                    description: 'Helllo this is my long description to fill space',
+                },
+                {
+                    id: 3,
+                    title: 'This is my title! 3',
+                    description: 'Helllo this is my long description to fill space',
+                },
+            ],
+        }
     },
 }
 </script>

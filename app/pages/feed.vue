@@ -1,6 +1,12 @@
 <template>
     <div>
-        <PostPreview v-for='post in posts' :key='post.id' :post='post' />
+        <h1>Blog</h1>
+        <br>
+
+        <PostPreview
+            v-for='post in posts'
+            :key='post.id'
+            :post='post' />
     </div>
 </template>
 
@@ -26,7 +32,17 @@ import Post from '../models/Post'
                     id: 1,
                     title: 'This is my title!',
                     description: 'Helllo this is my long description to fill space',
-                }
+                },
+                {
+                    id: 2,
+                    title: 'This is my title! 2',
+                    description: 'Helllo this is my long description to fill space',
+                },
+                {
+                    id: 3,
+                    title: 'This is my title! 3',
+                    description: 'Helllo this is my long description to fill space',
+                },
             ],
         }
     },
