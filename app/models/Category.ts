@@ -1,6 +1,6 @@
 export default interface Category {
     id: number,
-    name: string.
+    name: string,
     permalink: string,
     description: string,
     icon: string,

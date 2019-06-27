@@ -1,0 +1,50 @@
+/* __________________________________________________________________________*/
+/*
+/*                               DMIX: Overrides
+/*
+/* __________________________________________________________________________*/
+
+
+/* __________________________________________________________________________*/
+/* Tachyon */
+/* __________________________________________________________________________*/
+
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: var(--black-20);
+}
+
+::-moz-placeholder {
+    color: var(--black-20);
+}
+
+.shadow-side-1 {
+    box-shadow: 3px 0 0 0 rgba(0, 0, 0, .01);
+    box-shadow: none;
+}
+
+.serif {
+    font-family: var(--serif-family);
+}
+
+.sans-serif {
+    font-family: var(--sans-family);
+}
+
+.f5 {
+    font-size: 1.1rem;
+}
+
+.ph4 {
+    padding-left:  2.5rem;
+    padding-right: 2.5rem;
+}
+
+.b--black-10 {
+    border-color: rgba(0,0,0,0.08);
+}
+
+.b--layout {
+    border-color: rgba(0,0,0,0.0) !important;
+}
+

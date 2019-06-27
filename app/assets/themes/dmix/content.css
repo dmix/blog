@@ -1,0 +1,72 @@
+/* __________________________________________________________________________*/
+/*
+/*                               DMIX: Content
+/*
+/* __________________________________________________________________________*/
+
+
+/* __________________________________________________________________________*/
+/* Base
+/* __________________________________________________________________________*/
+
+/* @import "variables.css"; */
+
+.layout__content .lh-title {
+    /* margin-top: 0; */
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+hr {
+    color: transparent;
+    border: none;
+    background-color: black;
+    opacity: .1;
+    height: 1px;
+}
+
+.count {
+    position: relative;
+    top: -2px;
+}
+
+.help-block {
+    font-size:.875rem;
+    color:var(--black-60);
+    color:var(--light-red);
+    text-transform: capitalize;
+    /* color: white; */
+    background:var(--near-white);
+    padding: 0.5rem;
+    margin-top:-0.55rem;
+    display: block;
+    margin-bottom:var(--spacing-small);
+    border-radius:.125rem;
+    border: 1px;
+    border-style: solid;
+    border-color: var(--black-20);
+}
+
+.admin-table {
+    width: 100%;
+}
+
+.admin-table td, .admin-table th {
+    line-height: 1.5;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-color: var(--black-20);
+    border-style: dotted;
+    border-width: 0;
+    border-bottom-width: 1px;
+}
+
+.admin-table th {
+    border-style: solid;
+    border-color: var(--black-40);
+}

@@ -1,6 +1,7 @@
 export default {
     srcDir: 'app/',
     mode: 'universal',
+
     /*
      ** Headers of the page
      */
@@ -24,7 +25,10 @@ export default {
     /*
      ** Global CSS
      */
-    css: ['element-ui/lib/theme-chalk/index.css'],
+    css: [
+        'element-ui/lib/theme-chalk/index.css',
+        'assets/app.css',
+    ],
     /*
      ** Plugins to load before mounting the App
      */
@@ -36,7 +40,7 @@ export default {
         // Doc: https://axios.nuxtjs.org/usage
         '@nuxtjs/axios',
         '@nuxtjs/pwa',
-        '@nuxtjs/eslint-module'
+        // '@nuxtjs/eslint-module'
     ],
     /*
      ** Axios module configuration

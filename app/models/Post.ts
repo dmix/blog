@@ -4,7 +4,7 @@ export default interface Post {
     title: string
     body: string,
     permalink: string,
-    category_name: string.
+    category_name: string,
     created_at: Date,
     updated_at: Date,
 }

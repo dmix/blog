@@ -5,51 +5,127 @@
 </template>
 
 <style>
-html {
-    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-        Roboto, 'Helvetica Neue', Arial, sans-serif;
-    font-size: 16px;
-    word-spacing: 1px;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    box-sizing: border-box;
+/* __________________________________________________________________________*/
+/* Base
+/* __________________________________________________________________________*/
+
+body, html {
+    height: 100%;
 }
 
-*,
-*:before,
-*:after {
-    box-sizing: border-box;
-    margin: 0;
+@media (--breakpoint-not-small) {
+    body, html {
+        background: var(--bg);
+    }
 }
 
-.button--green {
-    display: inline-block;
-    border-radius: 4px;
-    border: 1px solid #3b8070;
-    color: #3b8070;
-    text-decoration: none;
-    padding: 10px 30px;
+.admin-nav {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    min-width: 200px;
+    min-height: 300px;
+    text-align: right;
+
+    a {
+        color: var(--bg);
+    }
+
+    &:hover {
+        a {
+            color: var(--black-50);
+        }
+    }
 }
 
-.button--green:hover {
-    color: #fff;
-    background-color: #3b8070;
+.layout__content {
+    background-color: var(--secondary-bg);
+    border-radius: 5px;
+    border: 1px solid #f1f1f1;
 }
 
-.button--grey {
-    display: inline-block;
-    border-radius: 4px;
-    border: 1px solid #35495e;
-    color: #35495e;
-    text-decoration: none;
-    padding: 10px 30px;
-    margin-left: 15px;
+.max-width {
+    max-width: var(--max-width);
 }
 
-.button--grey:hover {
-    color: #fff;
-    background-color: #35495e;
+menu {
+    list-style-type: disc;
+    /* -webkit-display: block; */
+    /* -webkit-margin-before: 0em; */
+    /* -webkit-margin-after: 0em; */
+    /* -webkit-margin-start: 0px; */
+    /* -webkit-margin-end: 0px; */
+    /* -webkit-padding-start: 0px; */
 }
+
+
+/* __________________________________________________________________________*/
+/* Colors
+/* __________________________________________________________________________*/
+
+.b--layout {
+    border-color: rgba(0,0,0,0.035);
+}
+
+/* __________________________________________________________________________*/
+/* Grid
+/* __________________________________________________________________________*/
+
+main {
+}
+
+.layout__sidebar {
+    height: 100%;
+    margin-left: -1px;
+}
+
+.layout__subnav {
+    min-height: 1000px;
+    margin-right:-1px
+}
+
+@media (--breakpoint-small) {
+    .layout__sidebar {
+        display: flex;
+        margin: 2rem 0;
+
+        &-logo {
+            margin-right: 5px;
+        }
+
+        &-nav {
+            padding-top: 0.5rem;
+            flex-grow: 1;
+
+            menu > div {
+              padding-left: 0.5rem;
+              padding-right: 0.5rem;
+            }
+        }
+    }
+}
+
+@media (--breakpoint-not-small) {
+    .layout__sidebar {
+        &-logo {
+        }
+
+        &-nav {
+        }
+    }
+}
+
+@media (--breakpoint-large) {
+    .layout__sidebar {
+        min-height: 1200px;
+    }
+}
+
+/* main { */
+/*   margin-left: 300px; */
+/*   min-height: 800px; */
+/* } */
+/* .layout__sidebar { */
+/*     position: fixed; */
+/* } */
 </style>
