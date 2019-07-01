@@ -1,52 +1,66 @@
 # ---------------------------------------------------------------------------------
-# BLOG APP
+# BLOG 
 # ---------------------------------------------------------------------------------
 
 # -- Options
 
-MIX_ENV=production
-BIN_DIR=/usr/local/bin
-ASSETS_DIR=assets
 DB_PATH=/Users/dmix/.asdf/installs/postgres/10.8
 HOME=/Users/dmix
+SERVER=./server
+CLIENT=./client
+
+# -- Main
+
+dev: dev-server dev-client
+test: test-server test-client
+
+# -- Server
+
+dev-server:
+	@cd $(SERVER)
+	@cargo watch -x 'run'
+
+server-server:
+	@cd $(SERVER)
+	@cargo run
+
+# -- Client
+
+dev-client:
+	@cd $(CLIENT)
+	@yarn run dev
+
+server-client:
+	@cd $(CLIENT)
+
+test-client:
+	@cd $(CLIENT)
+	@yarn run test
 
 # -- Helpers
 
-dev:
+tmux:
 	@tmuxp load .tmuxp.yaml
-
-repl:
-	@iex -S mix
-
-asdf:
-	. $(HOME)/.asdf/asdf.sh
-	. $(HOME)/.asdf/completions/asdf.bash
-	asdf local erlang 21.0
-
-db-src:
-	export PATH="\$PATH:~/.asdf/installs/postgres/10.8/bin/"
-
-db:
-	@$(DB_PATH)/bin/pg_ctl -D $(DB_PATH)/data -l logfile start
-
-db-stop:
-	@$(DB_PATH)/bin/pg_ctl -D $(DB_PATH)/data stop
-
-server:
-	@ln -sf /Users/dmix/dev/_elixir/blog/priv/static/app.js /Users/dmix/dev/_elixir/blog/priv/static/js/app.js
-	@rlwrap -a foo iex -S mix phx.server
-
-test:
-	@mix test.watch
 
 clean:
 	@rm .DS_Store; rm **/*/.DS_Store
 
-# -- Dependencies
+# -- Database
 
-update:
-	@cd $(ASSETS_DIR) && npm update
-	@mix deps.update --all
+asdf:
+	. $(HOME)/.asdf/asdf.sh
+	. $(HOME)/.asdf/completions/asdf.bash
+
+db-src:
+	export PATH="\$PATH:~/.asdf/installs/postgres/10.8/bin/"
+
+db-stop:
+	@$(DB_PATH)/bin/pg_ctl -D $(DB_PATH)/data stop
+
+db:
+	@$(DB_PATH)/bin/pg_ctl -D $(DB_PATH)/data -l logfile start
+
+# -- Dependencies
 
 install-npm:
 	@npm update
@@ -86,8 +100,11 @@ install-asdf:
 	@asdf install
 	@asdf install postgres 10.8
 
+install-rust:
+	@rustup default nightly
+	@rustup override set nightly
+
 # -- Makefile
 
-# .PHONY install install-npm update test server repl dev
-.PHONY install-npm
+.PHONY dev test
 .DEFAULT_GOAL := dev
