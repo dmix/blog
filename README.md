@@ -1,22 +1,22 @@
-# blog
+blog
+---
 
-> A high-performance blog/content platform with commenting, voting, and a
-> simple admin interface for writing markdown content and administrating
-> comments.
+A high-performance blog/content platform with commenting, voting, and a simple
+admin interface for writing markdown content and administrating comments.
 
-> A Vue SSR front-end built with Nuxt.js
+A Vue SSR front-end built with Nuxt.js
 
-> Rust backend API built with https://rocket.rs/ and http://diesel.rs/
+Rust backend API built with https://rocket.rs/ and http://diesel.rs/
 
-> More documentation to come as the project is fleshed out.
+More documentation to come as the project is fleshed out.
 
 # Installation
 
 Requirements:
 
-- postgres 10+, see server directory for configuration
-- rust nightly
-- node 12
+- Postgres 10+, see server directory for configuration (via asdf)
+- rust nightly (via rustup)
+- node 12 (via asdf)
 
 The make file (and soon bin/install) script will install development
 dependencies for you including eslint.
